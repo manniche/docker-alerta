@@ -1,8 +1,11 @@
 version: '2'
 services:
-  alerta:
+  alerta-db:
+    image: mongo
+  alerta-web:
     build: .
     ports:
       - "8080:80"
     container_name: "alerta"
-    
+    links:
+      - alerta-db:mongo
