@@ -7,5 +7,6 @@ services:
     ports:
       - "8080:80"
     container_name: "alerta-web"
+    env_file: ./alerta-web.env
     links:
       - alerta-db:mongo
